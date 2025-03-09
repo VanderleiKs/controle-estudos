@@ -1,0 +1,45 @@
+<div class="d-flex justify-content-center my-3">
+  <h1>Controle de Estudos</h1>
+</div>
+
+<div class="mx-5">
+  <div class="d-flex justify-content-right">
+    <input type="text" [(ngModel)]="newMateria">
+    <button class="btn btn-primary" (click)="adicionarMateria(newMateria)">Adicionar Materia</button>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Número questões resolvidas</th>
+        <th>Número questões certas</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let materia of materias()">
+        <td>
+          {{ materia.nome }}
+        </td>
+        <td>
+          {{ materia.numeroQuestoesResolvidas }}
+        </td>
+        <td>
+          {{ materia.numeroQuestoesAcertadas }}
+        </td>
+        <td>
+          <button class="btn btn-link" (click)="removerMateria(materia.id)">
+            <i class="bi bi-trash3"></i>
+          </button>
+          <button class="btn btn-link" (click)="editarMateria(materia)">
+            <i class="bi bi-pencil-square"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<router-outlet />

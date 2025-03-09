@@ -1,0 +1,17 @@
+<div class="m-3">
+  <h5 class="moda">Cadastro Materia</h5>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <label for="nome" class="form-label">nome</label>
+        <input type="text" class="form-control" [(ngModel)]="editMateria.nome" name="nome">
+      </div>
+      <div class="mb-3">
+        <label for="numeroQuestoesResolvidas" class="form-label">Número questões resolvidas</label>
+        <input type="text" class="form-control" [(ngModel)]="editMateria.numeroQuestoesResolvidas"
+          name="numeroQuestoesResolvidas">
+      </div>
+      <button class="btn btn-primary" (click)="salvarMateria()">Salvar</button>
+    </form>
+  </div>
+</div>
