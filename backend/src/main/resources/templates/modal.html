@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<body>
+  <div th:fragment="modal" id="modal-id" class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" th:text="${title}">title</h5>
+      </div>
+      <div class="modal-body">
+        <form id="materia-form">
+          <label for="nome">Nome</label>
+          <input type="text" name="nome" id="nome" th:value="${nome}" />
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button hx-post="/newMateria" hx-include="#materia-form" hx-trigger="click" data-bs-dismiss="modal"
+          class="btn btn-primary mr-2">Salvar</button>
+        <button type="button" class="btn btn-secondary" id="btn-close" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+# General ignores for the monorepo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+

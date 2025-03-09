@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: layout (~{::body},'about')}">
+<body>
+  <h2>Sobre</h2>
+  <p>Informações sobre o Controle de Estudos.</p>
+  <p></p>
+  <p></p>
+  
+  <div class="col-md-12">
+    <form th:action="@{/greet}" th:hx-post="@{/greet}" method="post" hx-target="#content">
+      <input type="text" name="name" th:value="${name}"/>
+      <button type="submit" class="btn btn-primary">Greet</button>
+    </form>
+  </div>
+  <div id="content" class="col-md-12">
+    <span th:text="${greeting}">Hello, World</span><br/>
+    <span th:text="${time}">21:00</span>
+  </div>
+  <p></p>
+  <br/>
+  <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+      <button
+      hx-get="/modal"
+      hx-target="#modals-here"
+      hx-trigger="click"
+      data-bs-toggle="modal"
+      data-bs-target="#modals-here"
+      class="btn primary">Open Modal</button>
+
+    <div id="modals-here"
+        class="modal modal-blur fade"
+        style="display: none"
+        aria-hidden="false"
+        tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content"></div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
+

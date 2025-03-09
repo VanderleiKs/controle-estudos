@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: layout (~{::body},'cadastroMateria')}">
+
+<body>
+  <div th:fragment="cadastro-form">
+
+    <form id="materia-form">
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" id="nome" th:value="${nome}" />
+    </form>
+    <button hx-post="/newMateria" hx-include="#materia-form" hx-trigger="click"
+      class="btn btn-primary mr-2">Salvar</button>
+  </div>
+</body>
+
+</html>
